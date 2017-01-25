@@ -17,6 +17,15 @@ CentOS 7
 * Xdebug
 
 
+## Require
+
+vagrant-vbguest
+
+```sh
+$ vagrant plugin install vagrant-vbguest
+```
+
+
 ## Usage
 
 ```sh
