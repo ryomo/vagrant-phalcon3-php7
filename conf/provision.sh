@@ -29,8 +29,9 @@ yum install -y mariadb mariadb-server
 cp /vagrant/conf/mysql.cnf /etc/my.cnf.d/
 systemctl start mariadb
 echo "GRANT ALL PRIVILEGES ON *.* TO root@'%';" | mysql -uroot
-for HOST in 'localhost' 'localhost.localdomain' '127.0.0.1' '::1' '%'; do
-    echo "SET PASSWORD FOR root@'${HOST}' = PASSWORD('${MYSQL_ROOT_PASS}');" | mysql -uroot
+echo "SET PASSWORD FOR root@'localhost' = PASSWORD('${MYSQL_ROOT_PASS}');" | mysql -uroot
+for HOST in 'localhost.localdomain' '127.0.0.1' '::1' '%'; do
+    echo "SET PASSWORD FOR root@'${HOST}' = PASSWORD('${MYSQL_ROOT_PASS}');" | mysql -uroot -p${MYSQL_ROOT_PASS}
 done
 
 # Phalcon
