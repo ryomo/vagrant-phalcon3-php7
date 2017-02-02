@@ -54,3 +54,5 @@ systemctl restart httpd
 systemctl enable httpd
 systemctl restart mariadb
 systemctl enable mariadb
+systemctl restart memcached
+systemctl enable memcached
